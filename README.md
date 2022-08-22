@@ -1,7 +1,7 @@
 # Cyclist_GDA
 It is one of the case study from the Google Data Analytics Capstone
 
-#### Scenario
+##### Scenario
 You are a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director
 of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore,
 your team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights,
@@ -9,7 +9,7 @@ your team will design a new marketing strategy to convert casual riders into ann
 must approve your recommendations, so they must be backed up with compelling data insights and professional data
 visualizations.
 
-#### Characters and teams:
+##### Characters and teams:
 * Cyclistic: A bike-share program that features more than 5,800 bicycles and 600 docking stations. Cyclistic sets itself
 apart by also offering reclining bikes, hand tricycles, and cargo bikes, making bike-share more inclusive to people with
 disabilities and riders who can’t use a standard two-wheeled bike. The majority of riders opt for traditional bikes; about
