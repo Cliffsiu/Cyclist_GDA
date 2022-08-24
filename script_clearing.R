@@ -74,15 +74,3 @@ total_trip_clean <-filter(total_trip, trip_duration_sec > 0)
 
 # Have a copy of the data frames.
 write.csv(total_trip_clean,"total_trip_clean.csv")
-
-
-
-
-
-
-
-
-
-
-
-
