@@ -76,6 +76,15 @@ total_trip$dayweek <- wday(substr(total_trip$started_at,1,10))
 
 
 
+# Accouding to the divvy staff, there are electric_bike and non_electric_bike. 
+# For non_electric_bike, they are labelled as classic_bike and docked_bike.
+# Here, I combine classic_bike and docked_bike into non_electric_bike and make a new column.
+total_trip$rideable_type2 <- 
+  with(total_trip, factor(rideable_type2, levels = c('electric_bike', 'classic_bike', 'docked_bike'), 
+                                labels = c("electric_bike", "non_electric_bike", "non_electric_bike")))
+
+
+
 # Filter out some data since some of the data end_at > started_at or duration = 0
 total_trip_clean <-filter(total_trip, trip_duration_sec > 0)
 
