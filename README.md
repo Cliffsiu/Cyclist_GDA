@@ -10,7 +10,7 @@ must approve your recommendations, so they must be backed up with compelling dat
 visualizations.
 
 ##  Problem Statement 
-Analysing how defferent between caualrider sand annual members us Cyclistic bikes differently; as well as which factors influence the rider to become annual members in order to maximizing the number of annual membership. 
+Analysing how defferent between casual riders and annual members use Cyclistic bikes differently; as well as which factors influence the rider to become annual members in order to maximizing the number of annual membership. 
 
 ## Preparing
 
@@ -19,4 +19,4 @@ The data can be downloaded on Cyclistic website [link](https://divvy-tripdata.s3
 The data is collected monthly by themself, which reliable, original, and clean. In this case study, I am using the last 12 month from Aug 2021 to Jul 2020.
 
 ## Processing
-
+I am using R Studio to clean the data. You can check out the note and code from [script_clearing.R](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/script_clearing.R).
