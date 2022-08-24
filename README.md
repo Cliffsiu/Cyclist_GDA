@@ -12,6 +12,11 @@ visualizations.
 ##  Problem Statement 
 Analysing how defferent between caualrider sand annual members us Cyclistic bikes differently; as well as which factors influence the rider to become annual members in order to maximizing the number of annual membership. 
 
-## Prepare
+## Preparing
 
 The data can be downloaded on Cyclistic website [link](https://divvy-tripdata.s3.amazonaws.com/index.html). (Notes: According tothe case study, the datasets have a different name because Cyclistic is a fictional company. The data has been made available by Motivate International Inc. under this [license](https://ride.divvybikes.com/data-license-agreement).)
+
+The data is collected monthly by themself, which reliable, original, and clean. In this case study, I am using the last 12 month from Aug 2021 to Jul 2020.
+
+## Processing
+
