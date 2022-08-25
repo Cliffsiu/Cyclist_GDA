@@ -22,7 +22,7 @@ The data is collected monthly by themself, which reliable, original, and clean. 
 I am using R Studio to clean the data. You can check out the note and code from [script_clearing.R](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/script_clearing.R).
 
 ## Analyze
-I am using R Studio to clean the data. In this phrase, some clculate is needed:
+I am using R Studio to clean the data. In this phrase, some calculates are needed:
 * The mean of ride_length
 * The max ride_length
 * The mode of day_of_week
