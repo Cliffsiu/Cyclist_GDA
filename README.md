@@ -23,11 +23,13 @@ I am using R Studio to clean the data. You can check out the note and code from 
 
 ## Analyze
 I am using R Studio to clean the data. In this phrase, some calculates are needed:
-* The mean of ride_length
-* The mode of day_of_week
 * The average ride_length for members and casual riders
-* The average ride_length for users by day_of_week
-* Calculate the number of rides for users by day_of_week by adding Count of trip_id to Values
+* The average ride_length for users by day_of_week and month
+
+## Visualization
+
+
+
 
 #### Observation
 
