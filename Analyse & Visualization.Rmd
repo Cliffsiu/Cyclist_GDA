@@ -30,8 +30,9 @@ glimpse(total_trip_clean)
 
 
 
-## Create new order for data
-I want to have different arrangement for day_of_week and months. So that I can work easier later.
+
+## Create a new order for data
+I want to have a different arrangements for the day_of_week and months. So that I can work easier later.
 
 ```{r}
 total_trip_clean$day_of_week <- 
@@ -42,23 +43,25 @@ total_trip_clean$month <-
   ordered(total_trip_clean$month, levels=c(8,9,10,11,12,1,2,3,4,5,6,7))
 ```
 
-###### change the column name for better display and understanding
+###### change the column name for better display and understanding.
 ```{r}
 colnames(total_trip_clean)[which(names(total_trip_clean) == "member_casual")] <- "type_of_rider"
 ```
 
 
 
+
 ## Analyze 
 
-### Summary the data with tables.
+### Summary of the data with tables.
 
 Here, we are looking at the following things:
-* The average riding duration for casual riders and members riders by the day of weeks and month.
-* 
+* The average amount of riders for casual and member by the day of week and month.
+* The average riding duration for casual riders and members riders by the day of week and month.
+* The difference between two types of bikes, electric bikes and non-electric bikes by the day of week and month.
+* The population of each station, and find out which one is the most popular.
 
-
-#### The summary of ride duration in mintues between casual riders and member riders. 
+#### The summary of riding duration in minutes between casual riders and member riders. 
 ```{r}
 num_duration_v1 <- total_trip_clean %>%
   drop_na(type_of_rider) %>% 
@@ -74,8 +77,7 @@ num_duration_v1 <- total_trip_clean %>%
 ```
 As we can see, the variance (variance  = SD^2) is so high. That the data points are very spread out from the mean.
 And based on the range, we can tell there are quite a lot of outlines/ bad data. Further investigation is needed. 
-For now, I only focus on the duration within a day. On the hand, I am going to removing anything under 1 mins, because it might cause by technical problems when the rider rented the bikes. Since it is not my interest in the case study and investigate is needed in the future. 
-
+For now, I only focus on the duration of a day. On the hand, I am going to remove anything under 1 minute, because it might cause by technical problems when the rider rented the bikes. Since it is not my interest in the case study and investigation is needed in the future. 
 
 
 ```{r}
@@ -95,12 +97,12 @@ num_duration_v2 <- total_trip_clean %>%
 ```
 
 In this table, we can see the variance is much lower than before.
-There are few observation we can see here:
-There are less causal rider than member rider; while the causal rider is willing to ride twice amount than a member rider based on the average duration.
+There are a few observations we can see here:
+There are fewer causal riders than member riders; while the causal rider is willing to ride twice the amount as a member rider based on the average duration.
 Also, the average and the median are not quite close to each other, which means they are not normally distributed.
 
 
-#### Comparasion on riding durion in mintus for casual riders and member riders by month and week
+#### Comparison of riding durion in minutes for casual riders and member riders by month and week.
 
 week:
 ```{r}
@@ -112,11 +114,8 @@ week_duration <- total_trip_clean %>%
   arrange(day_of_week) %>% 
   view()
 ```
-For casual riders, the average range between 20mins to 27min;
-while the members has a average range between 12mins to 14min.
-
-Casual riders has nearly twice amount of duration than members.
-
+For casual riders, the average range is between 20mins to 27min; while the members have an average range between 12mins to 14min.
+Casual riders have nearly twice the amount of duration as members.
 
 
 Month:
@@ -132,8 +131,7 @@ month_duration <- total_trip_clean %>%
 The average duration by month has a similar result as the average duration by the day of week 
 
 
-
-#### The location where they start their bikes rental
+#### The location where they start their bikes rental.
 
 V1 table is focusing on the exact name of the station name.
 ```{r}
@@ -168,36 +166,14 @@ rm(bike_start_v2)
 rm(bike_start_v3)
 ```
 
-There are nearly 4% of riders start their rental at Clark St(The most popular); while there are only 2% of riders start their rental at Wells St(second popular). There are more double amount of the difference.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+There are nearly 4% of riders start their rental at Clark St(The most popular); while there are only 2% of riders start their rental at Wells St(the second popular). There is more than double amount of the difference.
 
 
 
 
 ## Visualization
-
-
-First two is comparing the number of rides on day of week and monthly for casual riders and member riders.
+The first two graphs are comparing the number of rides on the day of week and monthly for casual riders and member riders.
+#### 1.
 ```{r}
 total_trip_clean %>%
   filter(duration_mins >1 & duration_mins < 1440) %>% 
@@ -207,10 +183,9 @@ total_trip_clean %>%
   geom_bar(position = position_dodge(), stat = "identity")+
   labs(tag="1", title="Comparing number of rides on day of week", subtitle = "Aug 2021 - Jul 2022", x="Days of Week", y="Number of Rides")
 ```
+As we can see, members tend to have a ride throughout the week. On the other hand, casual riders tend to have a ride during the weekend.
 
-As we can see, members tend to have a ride through out the week. On the other hand, causal riders tend to have a ride during weekend.
-
-
+#### 2.
 ```{r}
 total_trip_clean %>%
   filter(duration_mins >1 & duration_mins < 1440) %>% 
@@ -219,13 +194,11 @@ total_trip_clean %>%
   ggplot(aes(x = month, y = number_of_rides, fill = type_of_rider)) + 
   geom_bar(position = position_dodge(), stat = "identity")+
   labs(tag="2", title="Comparing number of rides of month", subtitle = "Aug 2021 - Jul 2022", x="Month", y="Number of Rides")
-
 ```
-As we can see most rider tend to rent the bike between May to October due to the cold weather(below 10'C) months.(refer:https://seasonsyear.com/USA/Illinois/Chicago).
+As we can see most riders tend to rent the bike between May to October due to the cold weather(below 10'C) months. (refer:https://seasonsyear.com/USA/Illinois/Chicago).
 
-
-
-The third and the forth is comparing the average duration on day of week and monthly for casual riders and member riders.
+#### 3.
+The third and the fourth are comparing the average duration on day of week and monthly for casual riders and member riders.
 ```{r}
 total_trip_clean %>%
   filter(duration_mins >1 & duration_mins < 1440) %>% 
@@ -236,7 +209,7 @@ total_trip_clean %>%
   labs(tag="3", title="Comparing average duration on day of week", subtitle = "Aug 2021 - Jul 2022", x="Days of Week", y="Average Duration")
 ```
 
-
+#### 4.
 ```{r}
 total_trip_clean %>%
   filter(duration_mins >1 & duration_mins < 1440) %>% 
@@ -245,13 +218,12 @@ total_trip_clean %>%
   ggplot(aes(x = month, y = average_duration, fill = type_of_rider)) + 
   geom_bar(position = position_dodge(), stat = "identity")+
   labs(tag="4", title="Comparing number of rides on month", subtitle = "Aug 2021 - Jul 2022", x="Month", y="Average Duration")
-
 ```
-On both graphs, we can clearly see that casual riders tend to rider longer than members during the whole year
+On both graphs, we can see those casual riders tend to ride longer than members during the whole year
 
 
-
-Graph 5 and 6 show the the comparison of two difference type of bikes, electric bike or non electric bike.
+Graphs 5 and 6 show the comparison of two different types of bikes, electric bikes and non-electric bikes.
+#### 5.
 ```{r}
 total_trip_clean %>%
   filter(duration_mins >1 & duration_mins < 1440) %>% 
@@ -262,8 +234,7 @@ total_trip_clean %>%
   labs(tag="5", title="Comparing number of rides on day of week for difference type of bikes", subtitle = "Aug 2021 - Jul 2022", x="Days of Week", y="Number of Rides")
 ```
 
-
-
+#### 6.
 ```{r}
 total_trip_clean %>%
   filter(duration_mins >1 & duration_mins < 1440) %>% 
@@ -272,15 +243,14 @@ total_trip_clean %>%
   ggplot(aes(x = month, y = number_of_rides, fill = rideable_type)) + 
   geom_bar(position = position_dodge(), stat = "identity")+
   labs(tag="6", title="Comparing number of rides on month for different type of bike", subtitle = "Aug 2021 - Jul 2022", x="Month", y="Number of Rides")
-
 ```
-Based on some investigation, with divvy's latest expansion on the west side of Chicago on last summer, more people were riding during the last summer.
+Based on some of my investigation, with divvy's latest expansion on the west side of Chicago last summer, more people were riding the last summer.
 
 
-
-The last two tables are showing the which station is their starting location.
+The last two tables are showing which station is their starting location.
 V1 table is focusing on the exact name of the station name.
 V2 table is focusing on the general street/area of the bike station.
+#### 7.
 ```{r}
 bike_start_v1 <- bike_start_v1[!bike_start_v1$start_station_name=="",]
 
@@ -296,8 +266,8 @@ bike_start_v1%>%
 We can see that 'Streeter Dr & Grand Ave' is the most popular station to start riding compare to others.
 
 
-
 V2 table is focusing on the general street/area of the bike station.
+#### 8.
 ```{r}
 bike_start_combin <- bike_start_combin[!bike_start_combin$split_start_loc=="",]
 
@@ -308,8 +278,9 @@ bike_start_combin%>%
   geom_bar(position = position_dodge(), stat = "identity") +
   labs(tag="8", title="Popular bike station name in Chicago v2", subtitle = "Aug 2021 - Jul 2022", x="Station name", y="Total_amount")+
   theme(axis.text.x=element_blank())
-  
 ```
 We can see that 'Clark st' is the most popular area to start riding compare to others.
+
+
 
 
