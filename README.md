@@ -28,14 +28,18 @@ I am using R Studio to clean the data. In this phrase we are looking at the foll
 * The difference between two types of bikes, electric bikes and non-electric bikes by the day of week and month.
 * The population of each station, and find out which one is the most popular.
 
+
+
 For Visualization
-You can check the [Analyse & Visualization.Rmd](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/Analyse%20%26%20Visualization.Rmd)
-
-
+You can check the [Analyse & Visualization.Rmd](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/Analyse%20%26%20Visualization.Rmd).
+Tableau maybe created in the furture under the Cyclist_GDA folder for better visualization.
 
 
 #### Observation
-
+* For casual riders, the average duration is 24mins; while the members have an average duration between 13min. Casual riders have nearly twice the amount of duration as members by the day of week and monthly.
+* Members tend to have a ride throughout the week. On the other hand, casual riders tend to have a ride during the weekend.
+* People tend to rent a non-electric bike more then electric bike.
+* There are nearly 4% of riders start their rental at Clark St(The most popular); while there are only 2% of riders start their rental at Wells St(the second popular). There is more than double amount of the difference.
 
 
 
