@@ -52,7 +52,7 @@ Tableau maybe created in the furture under the Cyclist_GDA folder for better vis
 * New advertisment can be put at the popular area to attract more poeple to use the service, such as 'Streeter Dr & Grand Ave', 'Clark Street', 'Wells Steet'. 
 
 
-## ---------------------------- End of Case Study -------------------------------
+## ------------ End of Case Study -------------
 
 
 
