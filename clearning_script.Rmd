@@ -4,8 +4,10 @@ author: "Cliff Siu"
 date: "2022-08-24"
 output: html_document
 ---
-# Install and load the packages that I need for cleaning the data
 
+
+
+# Install and load the packages that I need for cleaning the data
 ```{r}
 install.packages("dplyr")
 install.packages("tidyverse")
@@ -20,8 +22,7 @@ library(janitor)
 
 
 
-# Import that data from divvy. In my case study, I am use the data from Aug2021 to Jul2022.
-
+# Import that data from divvy. In my case study, I am using the data from Aug2021 to Jul2022.
 ```{r}
 trip_2021_08<-read.csv("trip_2021_08.csv")
 trip_2021_09<-read.csv("trip_2021_09.csv")
@@ -39,8 +40,8 @@ trip_2022_07<-read.csv("trip_2022_07.csv")
 
 
 
-# Check if they are the same type and having same amount of columns. 
-# Combine the all the data into one single data frame by using rbind() function.
+Check if they are the same type and have the same amount of columns. 
+Combine all the data into one single data frame by using rbind() function.
 
 ```{r}
 compare_df_cols(trip_2021_08,trip_2021_09,trip_2021_10,trip_2021_11,trip_2021_12,
@@ -54,9 +55,7 @@ total_trip <- rbind(trip_2021_08,trip_2021_09,trip_2021_10,trip_2021_11,trip_202
 
 
 
-
-
-# Drop unwanted data frame
+Drop unwanted data frame
 ```{r}
 rm(trip_2021_08,trip_2021_09,trip_2021_10,trip_2021_11,trip_2021_12,
    trip_2022_01,trip_2022_02,trip_2022_03,trip_2022_04,trip_2022_05,
@@ -65,14 +64,16 @@ rm(trip_2021_08,trip_2021_09,trip_2021_10,trip_2021_11,trip_2021_12,
 
 
 
-# Clean name: make sure all the column names are followers the same structure and easy to work with.
-
+## Cleaning name: 
+Make sure all the column names are followers of the same structure and are easy to work with.
 ```{r}
 clean_names(total_trip)
 colnames(total_trip)
 ```
 
-# Drop NULL row, and check for duplicate.
+
+
+#### Drop NULL row, and check for the duplicate.
 ```{r}
 total_trip <- drop_na(total_trip)
 length(unique(total_trip$ride_id)) == nrow(total_trip)  #return TRUE == no duplicate
@@ -80,7 +81,7 @@ length(unique(total_trip$ride_id)) == nrow(total_trip)  #return TRUE == no dupli
 
 
 
-# Change the format from chr to difftime in order to calculate the time different between start and end.
+##### Change the format from chr to difftime in order to calculate the time difference between start and end.
 ```{r}
 total_trip$started_at <- strptime(total_trip$started_at, format = "%Y-%m-%d %H:%M:%S")
 total_trip$ended_at <- strptime(total_trip$ended_at, format = "%Y-%m-%d %H:%M:%S")
@@ -88,7 +89,7 @@ str(total_trip)
 ```
 
 
-# Create 2 new columns for trip duration in seconds and minutes.
+#### Create 2 new columns for riding duration in seconds and minutes.
 ```{r}
 total_trip <- mutate(total_trip, duration_sec = difftime(total_trip$ended_at, total_trip$started_at, units="sec"))
 total_trip <- mutate(total_trip, duration_mins = difftime(total_trip$ended_at, total_trip$started_at, units="mins"))
@@ -97,7 +98,7 @@ total_trip <- mutate(total_trip, duration_mins = difftime(total_trip$ended_at, t
 
 
 
-# Create a new column 'day_of_week'(1=Sunday, 7=Saturday), and add more colums such as Date, Month, Year
+### Create a new column 'day_of_week'(1=Sunday, 7=Saturday), and add more columns such as Date, Month, Year
 
 ```{r}
 total_trip$date <- as.Date(total_trip$started_at)  
@@ -109,9 +110,9 @@ total_trip$day_of_week <- format(as.Date(total_trip$date), "%A")
 
 
 
-# Accouding to the divvy staff, there are electric_bike and non_electric_bike. 
-# For non_electric_bike, they are labelled as classic_bike and docked_bike.
-# Here, I combine classic_bike and docked_bike into non_electric_bike and make a new column.
+According to the divvy staff, there are electric_bike and non_electric_bike. 
+For non_electric_bike, they are labeled as classic_bike and docked_bike.
+Here, I combine classic_bike and docked_bike into non_electric_bike and make a new column.
 ```{r}
 total_trip$rideable_type[total_trip$rideable_type == 'classic_bike'] <- 'non_electric_bike'
 total_trip$rideable_type[total_trip$rideable_type == 'docked_bike'] <- 'non_electric_bike'
@@ -119,29 +120,15 @@ total_trip$rideable_type[total_trip$rideable_type == 'docked_bike'] <- 'non_elec
 
 
 
-# Filter out some data since some of the data end_at > started_at or duration = 0
+#### Filter out some data since some of the data end_at > started_at or duration = 0
 ```{r}
 total_trip_clean <-filter(total_trip, duration_sec > 0)
 ```
 
 
 
-
-
-# Have a copy of the data frames.
+## Have a copy of the data frames.
 ```{r}
 write.csv(total_trip_clean,"total_trip_clean.csv")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
