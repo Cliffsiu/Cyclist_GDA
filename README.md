@@ -37,14 +37,22 @@ Tableau maybe created in the furture under the Cyclist_GDA folder for better vis
 
 
 ### Observation
-* For casual riders, the average duration is 24mins; while the members have an average duration between 13min. Casual riders have nearly twice the amount of duration as members by the day of week and monthly.
+* For casual riders, the average duration is 24mins; while the members have an average duration between 13min. Casual riders have nearly twice the amount of duration as members on both the day of week and monthly.
 * Members tend to have a ride throughout the week. On the other hand, casual riders tend to have a ride during the weekend.
 * People tend to rent a non-electric bike more then electric bike.
+* More people use the bike sharing during the new expansion during last summer, Jun 2021.
 * There are nearly 4% of riders start their rental at Clark St(The most popular); while there are only 2% of riders start their rental at Wells St(the second popular). There is more than double amount of the difference.
 
 
+## Act
+### Recommandation
+* Offer a weekday discount to casual rider to attract more people to use the bike sharing in order to create a uniform amount of poeple to use the service.
+* Offer a discount or hold some events during summer (between May to October) in order to use the service.
+* Install more stations to have more easy access to the bike sharing service.
+* New advertisment can be put at the popular area to attract more poeple to use the service, such as 'Streeter Dr & Grand Ave', 'Clark Street', 'Wells Steet'. 
 
 
+## -------------------------------------- End of Case Study ------------------------------------------------------------------------------------------
 
 
 
