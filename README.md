@@ -21,12 +21,15 @@ The data is collected monthly by themself, which is reliable, original, and clea
 ## Processing
 I am using R Studio to clean the data. You can check out the note and code from [script_clearing.R](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/script_clearing.R).
 
-## Analyze
-I am using R Studio to clean the data. In this phrase, some calculates are needed:
-* The average ride_length for members and casual riders
-* The average ride_length for users by day_of_week and month
+## Analyze and Visualization
+I am using R Studio to clean the data. In this phrase we are looking at the following things:
+* The average amount of riders for casual and member by the day of week and month.
+* The average riding duration for casual riders and members riders by the day of week and month.
+* The difference between two types of bikes, electric bikes and non-electric bikes by the day of week and month.
+* The population of each station, and find out which one is the most popular.
 
-## Visualization
+For Visualization
+You can check the [Analyse & Visualization.Rmd](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/Analyse%20%26%20Visualization.Rmd)
 
 
 
