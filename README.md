@@ -35,7 +35,8 @@ You can check the [Analyse & Visualization.Rmd](https://github.com/Cliffsiu/Cycl
 Tableau maybe created in the furture under the Cyclist_GDA folder for better visualization.
 
 
-#### Observation
+
+### Observation
 * For casual riders, the average duration is 24mins; while the members have an average duration between 13min. Casual riders have nearly twice the amount of duration as members by the day of week and monthly.
 * Members tend to have a ride throughout the week. On the other hand, casual riders tend to have a ride during the weekend.
 * People tend to rent a non-electric bike more then electric bike.
