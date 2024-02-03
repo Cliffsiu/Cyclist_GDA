@@ -19,7 +19,7 @@ The data can be downloaded on Cyclistic website [link](https://divvy-tripdata.s3
 The data is collected monthly by itself, which is reliable, original, and clean. In this case study, I am using the last 12 months from Aug 2021 to Jul 2020.
 
 ## Processing
-I am using R Studio to clean the data. You can check out the note and code from [script_clearing.R](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/script_clearing.R).
+I am using R Studio to clean the data. You can check out the note and code from [script_clearing.R](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/clearning_script.Rmd).
 
 ## Analyze and Visualization
 I am using R Studio to clean the data. In this phrase we are looking at the following things:
