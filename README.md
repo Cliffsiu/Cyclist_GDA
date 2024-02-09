@@ -16,7 +16,7 @@ Analyzing how different between casual riders and annual members use Cyclistic b
 
 The data can be downloaded on Cyclistic website [link](https://divvy-tripdata.s3.amazonaws.com/index.html). (Notes: According to the case study, the datasets have a different name because Cyclistic is a fictional company. The data has been made available by Motivate International Inc. under this [license](https://ride.divvybikes.com/data-license-agreement).)
 
-The data is collected monthly by itself, which is reliable, original, and clean. In this case study, I am using the last 12 months from Aug 2021 to Jul 2020.
+The data is collected monthly by itself, which is reliable, original, and clean. In this case study, I am using the last 12 months from Aug 2021 to Jul 2022.
 
 ## Processing
 I am using R Studio to clean the data. You can check out the note and code from [script_clearing.R](https://github.com/Cliffsiu/Cyclist_GDA/blob/main/clearning_script.Rmd).
