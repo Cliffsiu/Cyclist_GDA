@@ -22,7 +22,7 @@ library(janitor)
 
 
 
-# Import that data from divvy. In my case study, I am using the data from Aug2021 to Jul2022.
+# Import that data from Divvy. In my case study, I am using the data from Aug2021 to Jul2022.
 ```{r}
 trip_2021_08<-read.csv("202108-divvy-tripdata.csv")
 trip_2021_09<-read.csv("202109-divvy-tripdata.csv")
