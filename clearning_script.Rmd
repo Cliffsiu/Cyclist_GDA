@@ -24,18 +24,18 @@ library(janitor)
 
 # Import that data from divvy. In my case study, I am using the data from Aug2021 to Jul2022.
 ```{r}
-trip_2021_08<-read.csv("trip_2021_08.csv")
-trip_2021_09<-read.csv("trip_2021_09.csv")
-trip_2021_10<-read.csv("trip_2021_10.csv")
-trip_2021_11<-read.csv("trip_2021_11.csv")
-trip_2021_12<-read.csv("trip_2021_12.csv")
-trip_2022_01<-read.csv("trip_2022_01.csv")
-trip_2022_02<-read.csv("trip_2022_02.csv")
-trip_2022_03<-read.csv("trip_2022_03.csv")
-trip_2022_04<-read.csv("trip_2022_04.csv")
-trip_2022_05<-read.csv("trip_2022_05.csv")
-trip_2022_06<-read.csv("trip_2022_06.csv")
-trip_2022_07<-read.csv("trip_2022_07.csv")
+trip_2021_08<-read.csv("202108-divvy-tripdata.csv")
+trip_2021_09<-read.csv("202109-divvy-tripdata.csv")
+trip_2021_10<-read.csv("202110-divvy-tripdata.csv")
+trip_2021_11<-read.csv("202111-divvy-tripdata.csv")
+trip_2021_12<-read.csv("202112-divvy-tripdata.csv")
+trip_2022_01<-read.csv("202201-divvy-tripdata.csv")
+trip_2022_02<-read.csv("202202-divvy-tripdata.csv")
+trip_2022_03<-read.csv("202203-divvy-tripdata.csv")
+trip_2022_04<-read.csv("202204-divvy-tripdata.csv")
+trip_2022_05<-read.csv("202205-divvy-tripdata.csv")
+trip_2022_06<-read.csv("202206-divvy-tripdata.csv")
+trip_2022_07<-read.csv("202207-divvy-tripdata.csv")
 ```
 
 
